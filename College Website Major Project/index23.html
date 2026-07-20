@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Gallery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f8;
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our College Gallery</h1>
+
+  <div class="gallery">
+        <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/495566558_122116397702816231_4105841469959836480_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=cny2z86OCtwQ7kNvwGWQf6v&_nc_oc=Adktcj9T26OYDYEbIH4QrvX79Qi-aUqI1my8y0KOh6AUQUF0zgSTUIariplvPlGwk9HaxX_rJvipON0E9xbDvG7J&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=-Foa7PfZ-sEvD5daPh22Bg&oh=00_AfN7vUd4fe7_JPqMsnNQaOtHCwRqVWV9J9rjdX5BmoAnSA&oe=686E08F3" alt="Gallery Image" onclick="openLightbox(this.src)"  width="400px" height="400px"/>
+            <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/495150119_122116397882816231_378051189522679137_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=bFxxz7YKzf4Q7kNvwF-Dc97&_nc_oc=AdnX1PA1Kfa6dEMIS3govwzZs61nKvB2gz1Fv5Dlmz8DOK1u5jvzC2bHlbcSRP1JVQrSAPOJXUoTbBSnXA1RCXo9&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=-Foa7PfZ-sEvD5daPh22Bg&oh=00_AfOF74k6-abC6i9SGM8nPdQX2MSm5p5xrrZmRaIDE9B6Gw&oe=686E0C9F" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px" />
+                <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/495498924_122116397984816231_7178333849726091274_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qAlCnSGpulcQ7kNvwGho891&_nc_oc=Adk6-mcTJS4gku7gG88jpzoNICPjg5PKlTmYTRj6DKq-ykP6e5gA6G7T6biPALNU_hF_NYCvZ70TNOmrkkk-6q45&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=XLM5f_0-tEXQsC-uk-9JoQ&oh=00_AfMJUukhSYyA-oxWsLAz2my3dCEBjDzAmITwtmQ06t2_0g&oe=686DF02D" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+                    <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/498297235_122117665568816231_7013466908458555948_n.jpg?stp=dst-jpg_p552x414_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=CpRO7jqLlvsQ7kNvwE4zKxS&_nc_oc=AdlTOrfKy5V68zxmkATa_ZYEBzKT57CfaoyNnSaLrkEWgIioWALhDj5Yrivxg6tFBbqlgJyHwXVfajM_OGDQmfcJ&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=lOTINOhNwbLrXrQKkMSMeg&oh=00_AfM9w5leXBBm4abenUnyTAKSX7m3LyS1lBqy61QmRFbtow&oe=686DF9CE" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+                        <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/494718398_122117665862816231_6099954597071073809_n.jpg?stp=cp6_dst-jpg_p552x414_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Q0rJDGPqjUoQ7kNvwGEXmEH&_nc_oc=AdknI8Z_GPIyNv4fZMI6ksB6Jn3r9HtBIUYX27nVdON92D47K9n8otuak1S0-uC0Ov3wYczP0dmZIL22iJQ-ukvt&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=UoAW9z94ZFdlQZB6EEjJmA&oh=00_AfNiHIr_cQhRrsomrsMoRkz8w6O12DutYQ84-av1k5_LlQ&oe=686DF81D" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+                            <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/497626166_122117665898816231_5497931173414229997_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=VnBYUGNZs54Q7kNvwFxMAx3&_nc_oc=AdnOrXoHnBs1mEFDvY2cyWk1ylHOnwlouDdq3IjaOoRvhNb-l7UVRrpckE2ivw4CJ_DV_RXEjxyLoNmlE0hj3rIV&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=UoAW9z94ZFdlQZB6EEjJmA&oh=00_AfPvgnfoLg9lA-EeP0pWZ_suTNB8YWukomXYBVJpwpRWYA&oe=686DF93B" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+                                <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/497686616_122117745668816231_7970823252560128169_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=d0e6REkWqTAQ7kNvwFkdHIP&_nc_oc=AdntM2pmarVzIcBEFRSbfjNYc-G2j91abjKANPscPqyjwB7qZJhT7d6_rBQbCRIc1S-x5yMLPDxCyqOJLdm617r0&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=heTjEOrUv8xJrvSe7KMeEw&oh=00_AfNVLp1i2fXvR7dB5XvNSmWs018VezN3QeaAN_aPR0EmrA&oe=686DE3E3" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+                                    <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/495460902_122116398080816231_7730603183703684453_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=C3g-CKa6H9QQ7kNvwHi86G8&_nc_oc=AdmUEgy5xauR-2w_1diabhJDThHAnILBjqGQ5VJzybGbwTQhI-Gh8zTHO5xx9pSD7PIuYo4uRclOi97J3sBm80lS&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=XLM5f_0-tEXQsC-uk-9JoQ&oh=00_AfOU_R41Gt0sYNrqBio_7bk1QoK2Capvy7k2q2H8Cg3Pnw&oe=686DE112" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+                                        <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/492481757_122113924166816231_7548389902981108675_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=z93Zff-GcaYQ7kNvwENg8v1&_nc_oc=AdlWVtMWA21gHfcB43iG1MXx1n0ZM4Hhe4SUmeF3heRbgTJWOuP_6XF-kAlh4e-n8qDi-dCHAh1lGQjDMxTQETH7&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=HvnZypuerB8_kGLsLUTmpA&oh=00_AfO1IofEuFp4FqAPyelQ5oB_qM6w-GI3eu12AKAQ2R09TA&oe=686DE79F" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+                                            <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/493955061_122113923998816231_4896048366505337326_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=U8QebQlH3jQQ7kNvwEqSsMk&_nc_oc=AdnoEMOspoirbSmpsEq0zR6Eb4ENPW0KFemgZ5I1VxV3EGrJi7QlPgr5XfmurRxy769E13TX9LGr-Coo4zII5Pf2&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=HvnZypuerB8_kGLsLUTmpA&oh=00_AfOg10Z7P-tE8pPmii1Ks_QgujidqSUUbfzfchS9LIhnRw&oe=686DE41E" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+    <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/492308448_122113924958816231_7864464082125799031_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6lcFDBYOkQoQ7kNvwEcMMdJ&_nc_oc=Adm_W601Wz5dZ6nr_bK2zUDkmQt8Ryo_QgnuW2UrIpyH1uOmKIUw33v9fep1YOKSdwASTU62wkmfi-R1t3y7t_k0&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=-Foa7PfZ-sEvD5daPh22Bg&oh=00_AfNDPn8DWxVmTSN6a6W-otrwjkbvT_eO0pLh8CbyLZCFaw&oe=686DF3C7" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+        <img src="https://scontent.frpr5-1.fna.fbcdn.net/v/t39.30808-6/492223087_122113923884816231_7979435420035662139_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=VAjRnqJwi1kQ7kNvwE-Q08c&_nc_oc=AdnyB7emMiCMYNjhk4T_O0FBvbz1o-gM68v5YV8VUAExZz0TVTkHpgpQn6TGwbLQ5PiaJkiqdYaHOb0-V7_gsAGw&_nc_zt=23&_nc_ht=scontent.frpr5-1.fna&_nc_gid=K0Vhl33dIlzbEI2nRXBdww&oh=00_AfMyKM90uZWFLdYEhFHbjZ7mYmnpmchxZIGL2EPcptsuQw&oe=686DDF77" alt="Gallery Image" onclick="openLightbox(this.src)" width="400px" height="400px"/>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <a href="#" class="close">&times;</a>
+    <img id="lightbox-img" src="" alt="Large View" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

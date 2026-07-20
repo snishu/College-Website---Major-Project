@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty List - Branch Wise</title>
+   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+    }
+    body {
+      position: relative;
+      padding: 30px;
+      background: #0f0c29;
+      color: #fff;
+    }
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.8em;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
+    .section {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 25px 35px;
+      margin: 40px auto;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 1100px;
+      animation: fadeSlideIn 1s ease-in-out both;
+    }
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 8px;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 0.6s ease-out both;
+      backdrop-filter: blur(6px);
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    .name {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .role {
+      font-size: 0.95em;
+      color: #eee;
+    }
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>FACULTIES INFORMATION</h1>
+  
+
+  <!-- Information Technology -->
+  <div class="section">
+    <h2>Information Technology</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mr. Ravi Prakash Dhadse</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mrs. Aasreen Khan</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mrs. Bali Sharma</div><div class="role">Lecturer</div></div>
+    </div>
+  </div>
+
+  <!-- Computer Science -->
+  <div class="section">
+    <h2>Computer Science</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mr. H. D. Patel</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. Anand Tandekar</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mrs. Hina Rajwanshi</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mrs. Swati Gajabiye</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mrs. Pratima Singh</div><div class="role">Lecturer</div></div>
+    </div>
+  </div>
+
+  <!-- Mechanical Engineering -->
+  <div class="section">
+    <h2>Mechanical Engineering</h2>
+    <div class="cards">
+      
+      <div class="card"><div class="name">Mr. Leelendra Vasnik</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. Girish Kumar Raikvar</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. Pramod Kumar Shakya</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. B. Marskole</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. Umesh Dehariya</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. J. P. Mathiya</div><div class="role">Lecturer</div></div>
+    
+    </div>
+  </div>
+
+  <!-- Civil Engineering -->
+  <div class="section">
+    <h2>Civil Engineering</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mrs. Ritu Malviya</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mrs. Prabha Uikey</div><div class="role">Lecturer</div></div>
+    </div>
+  </div>
+
+  <!-- Electrical Engineering -->
+  <div class="section">
+    <h2>Electrical Engineering</h2>
+    <div class="cards">
+      
+      <div class="card"><div class="name">Mr. Mukesh Nag</div><div class="role">Lecturer</div></div>
+       <div class="card"><div class="name">Mr. Lalit Prajapati</div><div class="role">Lecturer</div></div>
+        <div class="card"><div class="name">Mr. Pawan Parteti</div><div class="role">Lecturer</div></div>
+        <div class="card"><div class="name">Mrs. Anuradha</div><div class="role">Lecturer</div></div>
+    </div>
+  </div>
+
+  <!-- Mining Engineering -->
+  <div class="section">
+    <h2>Mining Engineering</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mr. Kundan Singh</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. Manish Ghai</div><div class="role">Lecturer</div></div>
+      
+    </div>
+  </div>
+
+  <!-- Chemical Engineering -->
+  <div class="section">
+    <h2>Chemical Engineering</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mrs. Kanta Devi</div><div class="role">Lecturer</div></div>
+      <div class="card"><div class="name">Mr. Rajesh Shukla</div><div class="role">Lecturer</div></div>
+    </div>
+  </div>
+
+  <!-- Physics & Math -->
+  <div class="section">
+    <h2>General Section</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mrs. Poonam Sharma</div><div class="role">Lecturer, Physics</div></div>
+      <div class="card"><div class="name">Mr. Pappu Singh Rawat</div><div class="role">Lecturer, Mathematics</div></div>
+  <div class="card"><div class="name">Mr. Deepak Bhavsar</div><div class="role">Lecturer, Mathamiatics</div></div>
+  <div class="card"><div class="name">Mrs.Nidhi</div><div class="role">Lecturer, English</div></div>
+  
+    </div>
+  </div>
+
+  <!-- Administrative Staff -->
+  <div class="section">
+    <h2>Administrative Staff</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mr. U. K. Kurane</div><div class="role">Training Officer</div></div>
+      <div class="card"><div class="name">Mr. R. K. Balapandey</div><div class="role">Training Officer</div></div>
+      <div class="card"><div class="name">Mr. J. A. Manjurewar</div><div class="role">Demonstrator</div></div>
+      <div class="card"><div class="name">Mr. D. R. Kamde</div><div class="role">Demonstrator</div></div>
+      <div class="card"><div class="name">Mr. Deepak Ghatode</div><div class="role">Demonstrator</div></div>
+      <div class="card"><div class="name">Mr. C. S. Bharti</div><div class="role">Demonstrator</div></div>
+      <div class="card"><div class="name">Mr. A. K. Ramani</div><div class="role">Assistant, Self-Financed</div></div>
+    </div>
+  </div>
+
+  <!-- Workshop Instructors -->
+  <div class="section">
+    <h2>Workshop Instructors</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mr. K. L. Jawarkar</div><div class="role">Workshop Instructor</div></div>
+      <div class="card"><div class="name">Mr. H. B. Lokhande</div><div class="role">Workshop Instructor</div></div>
+      <div class="card"><div class="name">Mr. E. Minj</div><div class="role">Workshop Instructor</div></div>
+      <div class="card"><div class="name">Mr. S. K. Karosiya</div><div class="role">Workshop Instructor</div></div>
+      <div class="card"><div class="name">Mr. Manoj Soni</div><div class="role">Workshop Instructor</div></div>
+      <div class="card"><div class="name">Mr. Chandra Kishor Morley</div><div class="role">Workshop Instructor</div></div>
+    </div>
+  </div>
+
+  <!-- Lab Technicians -->
+  <div class="section">
+    <h2>Lab Technicians</h2>
+    <div class="cards">
+      <div class="card"><div class="name">Mr. Sunil Singh</div><div class="role">Lab Technician</div></div>
+      <div class="card"><div class="name">Mr. D. P. Dhok</div><div class="role">Lab Technician</div></div>
+      <div class="card"><div class="name">Mrs. Kala Uikey</div><div class="role">Lab Technician</div></div>
+      <div class="card"><div class="name">Mr. Nitesh Bhangre</div><div class="role">Lab Technician</div></div>
+      <div class="card"><div class="name">Mr. Vilas Thakare</div><div class="role">Lab Technician</div></div>
+      <div class="card"><div class="name">Mr. Rajendra Deshmukh</div><div class="role">Lab Technician</div></div>
+    </div>
+  </div>
+
+</body>
+</html>

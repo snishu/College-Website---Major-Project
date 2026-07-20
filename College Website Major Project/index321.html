@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Development Team</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top left, #1a1a2e, #16213e);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #f1f1f1;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-member {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-member::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.15), transparent, rgba(255,255,255,0.1));
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      margin-top: auto;
+      color: #aaa;
+    }
+
+    footer span {
+      display: block;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Development Team</h1>
+  </header>
+
+  <section class="team-container" id="team">
+    <!-- Team member names will be inserted here -->
+  </section>
+
+  <footer>
+    <span>Website developed by Information Technology</span>
+  </footer>
+
+  <script>
+    const names = [
+ "Mrs Aasreen Khan (Project Guide)",
+      "Nishant Soni (Team Leader)",
+      "Aaliya Khilji",
+      "Adnan",
+      "Devansh Dehariya",
+      "Muskan Mathur",
+      "Piyush Mathur",
+      "Somendra Bisen"
+    ];
+
+    const container = document.getElementById("team");
+
+    names.forEach(name => {
+      const div = document.createElement("div");
+      div.className = "team-member";
+      div.textContent = name;
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
